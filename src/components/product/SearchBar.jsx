@@ -1,32 +1,47 @@
 import { ChevronDown, ChevronUp, Package, Search, Store } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
+const modalOptions = [
+  {
+    id: 1,
+    name: "Produtos",
+    icon: <Package size={14} />,
+  },
+  {
+    id: 2,
+    name: "Lojas",
+    icon: <Store size={14} />,
+  },
+];
 export default function SearchBar() {
-
   const [isOpenModal, setOpenModal] = useState(false);
-  const modalOptions = [
-    {
-      id: 1,
-      name: "Produtos",
-      icon: <Package size={14} />,
-    },
-    {
-      id: 2,
-      name: "Lojas",
-      icon: <Store size={14} />,
-    },
-  ];
+  const [selectOption, setSelectOption] = useState(modalOptions[0])
+
   function toggleModal() {
     setOpenModal(!isOpenModal);
   }
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (containerRef.current && !containerRef.current.contains(event.target)) {
+        setOpenModal(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="flex relative md:hidden">
+    <div ref={containerRef} className="flex relative ">
       <button
         onClick={toggleModal}
-        className="flex text-[12px] text-text gap-2 items-center bg-third rounded-l-xl p-2.5 transition-all duration-250 hover:text-white"
+        className="flex w-30 text-[12px] text-text gap-2 items-center bg-third rounded-l-xl p-2.5 transition-all duration-250 hover:text-white"
       >
-        <Package size={14} />
-        Produtos
+        {selectOption.icon}
+        {selectOption.name}
         <ChevronDown
           id="iconUp"
           size={14}
@@ -38,17 +53,18 @@ export default function SearchBar() {
         <input
           type="text"
           className="border-none outline-0 w-[400px] mx-1 text-[13px] text-white"
-          placeholder="Pesquisar Produtos..."
+          placeholder={`Pesquisar ${selectOption.name}...`}
         />
       </div>
 
       {/* modal */}
       {isOpenModal && (
-        <div className="absolute flex flex-col top-[50px] p-1 text-[12px] left-0 w-[160px] border-1 border-[#1f2937] bg-third rounded-2xl">
+        <div className="absolute flex flex-col top-[50px] p-1 text-[12px] z-10 left-0 w-[160px] border-1 border-[#1f2937] bg-third rounded-2xl">
           {modalOptions.map((option) => (
             <div
               // quando selecionado
-              onclick={() => {
+              onClick={() => {
+                setSelectOption(option);
                 toggleModal();
               }}
               key={option.id}

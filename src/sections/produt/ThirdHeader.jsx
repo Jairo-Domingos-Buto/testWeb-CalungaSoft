@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ThirdHeader() {
   return (
-    <div className="flex items-center px-3 mt-7 justify-between mb-6">
+    <div className="flex items-center px-3 mt-10 justify-between mb-6 lg:px-77">
       <button className="flex items-center gap-2 text-sm font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -5,7 +5,7 @@ export default function SecondHeader() {
   const [isOpenModal, setOpenModal] = useState(false);
 
   return (
-    <nav className="flex items-center gap-6 h-10 border-y border-gray-500 px-10 dark:border-gray-800 relative">
+    <nav className="flex items-center gap-6 h-10 border-y border-gray-500 px-10 dark:border-gray-800 relative lg:px-52">
       <a
         className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-gray-900 dark:hover:text-white text-gray-500"
       >
