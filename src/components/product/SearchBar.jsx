@@ -57,7 +57,7 @@ export default function SearchBar() {
         />
       </div>
 
-      {/* modal */}
+      {/* MODAL */}
       {isOpenModal && (
         <div className="absolute flex flex-col top-[50px] p-1 text-[12px] z-10 left-0 w-[160px] border-1 border-[#1f2937] bg-third rounded-2xl">
           {modalOptions.map((option) => (

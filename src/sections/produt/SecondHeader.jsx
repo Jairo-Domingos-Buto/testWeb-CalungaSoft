@@ -40,7 +40,7 @@ export default function SecondHeader() {
             <path d="m6 9 6 6 6-6"></path>
           </svg>
         </a>
-        {/* modal */}
+        {/* MODAL */}
         {isOpenModal && (
           <div className="absolute top-full left-0 rounded p-0.5 border border-gray-500 dark:border-gray-800 mt-0 w-70 bg-white dark:bg-gray-900 z-50">
             <ul>

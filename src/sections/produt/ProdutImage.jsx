@@ -19,7 +19,7 @@ export default function ProductImage() {
 
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-12 items-start p-4 px-4 md:px-10 lg:px-78">
-      {/* Lado da foto */}
+      {/* LADO DA FOTO */}
       <div className="lg:col-span-7 lg:sticky lg:top-6 w-full">
         <div className="relative aspect-[4/5] lg:aspect-square xl:aspect-[4/5] max-h-[500px] lg:max-h-[600px] w-full rounded-xl overflow-hidden bg-gray-50 dark:bg-gray-900 border border-gray-100 dark:border-gray-800 mx-auto">
           <img
@@ -49,7 +49,7 @@ export default function ProductImage() {
         </div>
       </div>
 
-      {/* Lado do preco e detalhe */}
+      {/* LADO DO PRECO E DETALHE */}
       <div className="lg:col-span-5 flex flex-col w-full">
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-2">

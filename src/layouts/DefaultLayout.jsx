@@ -28,7 +28,7 @@ export default function DefaultLayout({ children }) {
     <div className="bg-primary min-h-screen w-full">
       {/* HEADER */}
       <header className="bg-primary text-white h-[64px] flex items-center px-10 justify-between top-0 lg:px-52">
-        {/* logo */}
+        {/* LOGO */}
         <div className="flex justify-center items-center gap-2">
           <div className="w-[32px] h-[32px] grid place-items-center bg-secundary font-bold rounded text-xl">
             CS
@@ -36,10 +36,10 @@ export default function DefaultLayout({ children }) {
           <h1 className="font-bold text-xl">CalungaShop</h1>
         </div>
 
-        {/* barra de pesquisa */}
+        {/* BARRA DE PESQUISA */}
         <SearchBar />
 
-        {/* buttons */}
+        {/* BOTTOES DO HEADER */}
         <div className="flex items-center gap-4">
           <button className="flex gap-2 items-center bg-[#111827] p-2 border-[0.5px] border-[#1d2835] rounded-xl hover:scale-110 transition-all duration-200">
             <Bell size={23} color="#6a717f" />
@@ -64,9 +64,9 @@ export default function DefaultLayout({ children }) {
       {/* FOOTER */}
       <footer className="bg-white dark:bg-gray-950">
         <div className="container mx-auto px-4 lg:px-6 py-16">
-          {/* Grid principal */}
+          {/* GRID PRINCIPAL */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 lg:gap-12 mb-16">
-            {/* Logo e descrição */}
+            {/* LOGO E DESCRICAO */}
             <div className="col-span-2 lg:col-span-2 space-y-6">
               <a className="flex items-center gap-2 group w-fit" href="/">
                 <div
@@ -117,7 +117,7 @@ export default function DefaultLayout({ children }) {
               </div>
             </div>
 
-            {/* Plataforma */}
+            {/* PLATAFORMA */}
             <div className="space-y-6">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
                 Plataforma
@@ -136,7 +136,7 @@ export default function DefaultLayout({ children }) {
               </ul>
             </div>
 
-            {/* Suporte */}
+            {/* SUPORTE */}
             <div className="space-y-6">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
                 Suporte
@@ -155,7 +155,7 @@ export default function DefaultLayout({ children }) {
               </ul>
             </div>
 
-            {/* Legal */}
+            {/* TERMOS LEGAIS */}
             <div className="space-y-6">
               <h4 className="text-sm font-semibold text-gray-900 dark:text-white">
                 Legal
@@ -175,7 +175,7 @@ export default function DefaultLayout({ children }) {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* NEWSLETTERS */}
           <div className="border-t border-gray-200 dark:border-gray-800 pt-12 pb-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="text-center md:text-left">
@@ -199,7 +199,7 @@ export default function DefaultLayout({ children }) {
             </div>
           </div>
 
-          {/* Copyright */}
+          {/* CPYRIGTH DIRITOS AUTORIAIS */}
           <div className="border-t border-gray-200 dark:border-gray-800 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-xs text-gray-500 dark:text-gray-400">
               © 2026 CalungaShop Angola. Todos os direitos reservados.

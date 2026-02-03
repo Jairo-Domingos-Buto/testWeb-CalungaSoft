@@ -47,7 +47,7 @@ function ProductCard({ product }) {
   return (
     <div className="flex flex-col group cursor-pointer w-full">
       <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-gray-50 dark:bg-gray-900 mb-3 border border-gray-100 dark:border-gray-800 transition-all group-hover:shadow-xl group-hover:border-gray-200 dark:group-hover:border-gray-700">
-        {/* Botão de favorito */}
+        {/* BOTAO DE FAVORITO */}
         <button className="absolute top-2.5 right-2.5 z-20 p-2.5 rounded-full backdrop-blur-md bg-white/70 dark:bg-black/40 border border-white/20 shadow-sm transition-all active:scale-90 md:hover:scale-110">
           <Heart
             size={18}
@@ -55,7 +55,7 @@ function ProductCard({ product }) {
           />
         </button>
 
-        {/* Imagem do produto */}
+        {/* IMAGEM DO PRODUTO */}
         <img
           alt={product.name}
           loading="lazy"
@@ -72,7 +72,7 @@ function ProductCard({ product }) {
         </div>
       </div>
 
-      {/* Informações das imagens do produto(teto falso) */}
+      {/* INFORMACOES DOS (teto falso) PERUCAS */}
       <div className="px-1.5 space-y-1.5">
         <div className="flex justify-between items-start gap-3">
           <div className="flex-1 min-w-0">
@@ -84,7 +84,7 @@ function ProductCard({ product }) {
             </h3>
           </div>
 
-          {/* Botão do carrinho */}
+          {/* BOTAO DO CARRINHO */}
           <button
             disabled={!product.inStock}
             className="p-2.5 rounded-xl transition-all active:scale-90 md:hover:text-white"
