@@ -1,6 +1,20 @@
-import { Bell, ShoppingBag, MapPin, Instagram, Facebook, Linkedin, Twitter, Globe } from "lucide-react";
+import {
+  Bell,
+  ShoppingBag,
+  MapPin,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Twitter,
+  Globe,
+  SearchAlert,
+  Search,
+  Menu,
+} from "lucide-react";
 import SearchBar from "../components/product/SearchBar";
 import SecondHeader from "../sections/produt/SecondHeader";
+import { useState } from "react";
+import MenuMobile from "../components/product/Modais/menuMobile";
 
 const footerLinks = {
   plataforma: [
@@ -24,23 +38,44 @@ const footerLinks = {
 };
 
 export default function DefaultLayout({ children }) {
+
+  const [isOpenModalMobile,setIsOpenModalMobile]=useState(false)
+
+  /* MODAL */
+  {isOpenModalMobile &&
+    <MenuMobile/>
+  }
+
   return (
-    <div className="bg-primary min-h-screen w-full">
+    <div className="bg-primary min-h-screen w-full ]">
       {/* HEADER */}
-      <header className="bg-primary text-white h-[64px] flex items-center px-10 justify-between top-0 lg:px-52">
+      <header className="bg-primary text-white h-[64px] flex items-center px-5 justify-between top-0 lg:px-52 border-[0.5px] border-[#1d2835] md:border-none">
         {/* LOGO */}
-        <div className="flex justify-center items-center gap-2">
-          <div className="w-[32px] h-[32px] grid place-items-center bg-secundary font-bold rounded text-xl">
+        <div className="flex justify-center items-center gap-2 ">
+          {/* MENU MOBILE */}
+          <div className="md:hidden grid place-items-center mr-4">
+            <button onClick={()=>setIsOpenModalMobile(true)} >
+
+              <Menu/>
+            </button>
+          </div>
+          <div className="w-[32px] h-[32px] grid place-items-center bg-secundary font-bold rounded text-xl ">
             CS
           </div>
-          <h1 className="font-bold text-xl">CalungaShop</h1>
+          <h1 className="hidden md:block font-bold text-xl">CalungaShop</h1>
         </div>
 
-        {/* BARRA DE PESQUISA */}
-        <SearchBar />
+        {/* BARRA DE PESQUISA  */}
+        <div className="hidden md:block">
+          <SearchBar />
+        </div>
 
         {/* BOTTOES DO HEADER */}
         <div className="flex items-center gap-4">
+          {/* BOTAO DO MOBILE */}
+          <button className="md:hidden">
+            <Search />
+          </button>
           <button className="flex gap-2 items-center bg-[#111827] p-2 border-[0.5px] border-[#1d2835] rounded-xl hover:scale-110 transition-all duration-200">
             <Bell size={23} color="#6a717f" />
           </button>
@@ -50,13 +85,16 @@ export default function DefaultLayout({ children }) {
               3
             </span>
           </button>
-          <button className="bg-secundary w-[74px] h-[35px] text-[15px] font-bold rounded grid place-items-center text-white">
+          <button className="bg-secundary w-[74px] h-[35px] text-[15px] font-bold rounded grid place-items-center text-white hidden md:block">
             Entrar
           </button>
         </div>
       </header>
 
-      <SecondHeader />
+      {/* SECOND HEADER  */}
+      <div className="hidden md:block">
+        <SecondHeader />
+      </div>
 
       {/* CONTENT */}
       <main>{children}</main>
@@ -80,8 +118,9 @@ export default function DefaultLayout({ children }) {
                 </span>
               </a>
               <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed max-w-sm">
-                A plataforma líder em e-commerce em Angola. Conectamos compradores e
-                vendedores com tecnologia de ponta, segurança e confiança.
+                A plataforma líder em e-commerce em Angola. Conectamos
+                compradores e vendedores com tecnologia de ponta, segurança e
+                confiança.
               </p>
               <div className="pt-2">
                 <div className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 mb-4">
