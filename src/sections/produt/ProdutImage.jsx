@@ -6,13 +6,14 @@ import {
   RotateCcw,
   ChevronRight,
 } from "lucide-react";
-import image1 from "../../assets/image.png";
-import image2 from "../../assets/image copy.png";
-import image3 from "../../assets/image copy 2.png";
-import image4 from "../../assets/image copy 3.png";
-import image5 from "../../assets/image copy 4.png";
 
-const images = [image1, image2, image3, image4, image5];
+const images = [
+  "https://calunga.shop/api/v1/uploads/products/b8a7fce3-5289-457a-8880-53d9b33f050e.jpeg",
+  "https://calunga.shop/api/v1/uploads/products/91f0d727-5896-47b7-bf9f-a4d71a55c84c.jpeg",
+  "https://calunga.shop/api/v1/uploads/products/b93c83e0-c356-4d8a-a43a-25563a192975.jpeg",
+  "https://calunga.shop/api/v1/uploads/products/7f53e62a-72c5-4844-9838-3beb12a8e6ed.jpeg",
+  "https://calunga.shop/api/v1/uploads/products/80c53be5-1e92-411d-850a-5cd1f82f3473.jpeg",
+];
 
 export default function ProductImage() {
   const [selectedImage, setSelectedImage] = useState(0);

@@ -41,13 +41,11 @@ export default function DefaultLayout({ children }) {
 
   const [isOpenModalMobile,setIsOpenModalMobile]=useState(false)
 
-  /* MODAL */
-  {isOpenModalMobile &&
-    <MenuMobile/>
-  }
 
   return (
-    <div className="bg-primary min-h-screen w-full ]">
+    <div className="bg-primary min-h-screen w-full">
+      {/* MODAL */}
+      <MenuMobile isOpen={isOpenModalMobile} onClose={() => setIsOpenModalMobile(false)} />
       {/* HEADER */}
       <header className="bg-primary text-white h-[64px] flex items-center px-5 justify-between top-0 lg:px-52 border-[0.5px] border-[#1d2835] md:border-none">
         {/* LOGO */}
